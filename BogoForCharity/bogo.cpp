@@ -12,20 +12,20 @@ void shuffle(int[], int);
 //Driver code for bogo
 int main() {
 	int calculatedTime = 0;
-	unsigned int sizeOfArray = 2;
 
-	int* arr = (int*)malloc(sizeOfArray * sizeof(int));
-	fillArray(&arr[0], sizeOfArray);
-	printf("Sorting...\n");
-	clock_t begin = clock();
-	bogoSort(arr, sizeOfArray);
-	clock_t end = clock();
-	calculatedTime = (begin - end) / CLOCKS_PER_SEC;
-	for (int i = 0; i < sizeOfArray; i++) {
-		printf("%d\t", arr[i]);
+	for (int sizeOfArray = 2; 1 < 2; sizeOfArray++) {
+		int* arr = (int*)malloc(sizeOfArray * sizeof(int));
+		fillArray(&arr[0], sizeOfArray);
+		printf("\nSorting...\n");
+		clock_t begin = clock();
+		bogoSort(arr, sizeOfArray);
+		clock_t end = clock();
+		calculatedTime = (end - begin) / CLOCKS_PER_SEC;
+		for (int j = 0; j < sizeOfArray; j++) {
+			printf("%d\t", arr[j]);
+		}
+		printf("\nSorted %d elements in %d seconds\n", sizeOfArray, calculatedTime);
 	}
-	printf("\nSorted %d elements in %d seconds", sizeOfArray, calculatedTime);
-
 	/*for (int i = 0; i < sizeOfArray; i++) {
 		int* arr = (int*)malloc(sizeOfArray * sizeof(int));
 
