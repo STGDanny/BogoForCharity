@@ -12,7 +12,7 @@
 #include <time.h>
 
 //Function prototypes
-void fillArray(int*, int);
+void fillArray(int*, int, int);
 void bogoSort(int[], int);
 int checkIfSorted(int[], int);
 void swap(int*, int*);
@@ -20,6 +20,8 @@ void shuffle(int[], int);
 
 //Driver code for bogo
 int main() {
+	//Seed random number generator using current time (very random value)
+	srand(time(NULL));
 	int calculatedTime = 0;
 
 	//Loop will run bogo, increase the size of the array each loop
@@ -27,7 +29,7 @@ int main() {
 		//Allocate memory to arr. Equal in size to sizeOfArray * 4 bytes (size of an int in c)
 		int* arr = (int*)malloc(sizeOfArray * sizeof(int));
 		//Fill allocated memory with random values
-		fillArray(&arr[0], sizeOfArray);
+		fillArray(&arr[0], sizeOfArray, 1);
 
 		//Only here for feedback to the user
 		printf("\nSorting...\n");
@@ -61,14 +63,11 @@ int main() {
 *	RETURNS			:
 *	void			: Void
 */
-void fillArray(int* arr, int size) {
-	//Seed random number generator using current time (very random value)
-	srand(time(NULL));
-
+void fillArray(int* arr, int size, int lower) {
 	//For every value in arr[]
 	for (int i = 0; i < size; i++) {
-		//Set value of current element to a random number
-		arr[i] = rand() % size;
+		//Set value of current element to a random number (Can't be 0)
+		arr[i] = rand() % (size - lower + 1) + lower;
 	}
 }
 
@@ -149,9 +148,6 @@ void swap(int* xp, int* yp) {
 *	void			: Void
 */
 void shuffle(int arr[], int size) {
-	//Seed random number generator using current time (very random value)
-	srand(time(NULL));
-
 	//For every element in arr[], starting from the last element
 	for (int i = size + 1; i > 0; i--) {
 		//Swap current element with a random element in the array
