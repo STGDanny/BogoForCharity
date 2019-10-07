@@ -12,7 +12,7 @@
 #include <time.h>
 
 //Function prototypes
-void fillArray(int*, int, int);
+void fillArray(int*, int);
 void bogoSort(int[], int);
 int checkIfSorted(int[], int);
 void swap(int*, int*);
@@ -29,10 +29,13 @@ int main() {
 		//Allocate memory to arr. Equal in size to sizeOfArray * 4 bytes (size of an int in c)
 		int* arr = (int*)malloc(sizeOfArray * sizeof(int));
 		//Fill allocated memory with random values
-		fillArray(&arr[0], sizeOfArray, 1);
+		fillArray(&arr[0], sizeOfArray);
 
 		//Only here for feedback to the user
 		printf("\nSorting...\n");
+
+		//Shuffle array before sorting
+		shuffle(arr, sizeOfArray);
 
 		//Start clock and bogo
 		clock_t begin = clock();
@@ -50,6 +53,7 @@ int main() {
 		//Free up memory allocated to arr
 		free(arr);
 	}
+	return 0;
 }
 
 /*
@@ -63,11 +67,10 @@ int main() {
 *	RETURNS			:
 *	void			: Void
 */
-void fillArray(int* arr, int size, int lower) {
+void fillArray(int* arr, int size) {
 	//For every value in arr[]
 	for (int i = 0; i < size; i++) {
-		//Set value of current element to a random number (Can't be 0)
-		arr[i] = rand() % (size - lower + 1) + lower;
+		arr[i] = i + 1;
 	}
 }
 
@@ -126,6 +129,7 @@ int checkIfSorted(int arr[], int size) {
 *	RETURNS			:
 *	void			: Void
 */
+
 void swap(int* xp, int* yp) {
 	//Create temporary value equal to the first number
 	int tmpInt = *xp;
@@ -149,8 +153,8 @@ void swap(int* xp, int* yp) {
 */
 void shuffle(int arr[], int size) {
 	//For every element in arr[], starting from the last element
-	for (int i = size + 1; i > 0; i--) {
+	for (int i = 0; i < size; i++) {
 		//Swap current element with a random element in the array
-		swap(&i, &arr[rand() % size]);
+		swap(&arr[i], &arr[rand() % size]);
 	}
 }
