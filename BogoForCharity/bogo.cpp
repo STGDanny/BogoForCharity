@@ -35,9 +35,6 @@ int main() {
 		//Fill allocated memory with random values
 		fillArray(&arr[0], sizeOfArray);
 
-		//Only here for feedback to the user
-		printf("\nSorting...\n");
-
 		//Shuffle array before sorting
 		shuffle(arr, sizeOfArray);
 
