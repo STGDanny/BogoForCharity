@@ -16,7 +16,6 @@
 int currentNumOfElements = 2;
 int timeTaken = 0;
 
-//Author : Daniel Pieczewski
 //Driver code for bogo
 int main() {
 	//Seed random number generator using current time (very random value)
@@ -50,7 +49,6 @@ int main() {
 	return 0;
 }
 
-//Author : Daniel Pieczewski
 /*
 *	FUNCTION		: fillArray
 *	DESCRIPTION		: Fills each element of an array with values from 1 to the size of arr
@@ -69,7 +67,6 @@ void fillArray(int* arr, int size) {
 	}
 }
 
-//Author : Daniel Pieczewski
 /*
 *	FUNCTION		: bogoSort
 *	DESCRIPTION		: The best / worst sorting algorithm ever conceptualized.
@@ -90,7 +87,6 @@ void bogoSort(int arr[], int size) {
 	}
 }
 
-//Author : Daniel Pieczewski
 /*
 *	FUNCTION		: checkIfSorted
 *	DESCRIPTION		: Iterates through the list to check if array is sorted
@@ -115,7 +111,6 @@ int checkIfSorted(int arr[], int size) {
 	return 1;
 }
 
-//Author : Daniel Pieczewski
 /*
 *	FUNCTION		: swap
 *	DESCRIPTION		: Swaps two array elements
@@ -137,7 +132,6 @@ void swap(int* xp, int* yp) {
 	//Numbers have been swapped
 }
 
-//Author : Daniel Pieczewski
 /*
 *	FUNCTION		: shuffle
 *	DESCRIPTION		: Shuffles an array in pseudo-random fashion

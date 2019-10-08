@@ -1,7 +1,15 @@
+/*
+*	FILE			: gui.cpp
+*	PROJECT			: BogoForCharity
+*	PROGRAMMER(S)	: Daniel Pieczewski, Aidan Eastcott
+*	FIRST VERSION	: 2019-10-8
+*	DESCRIPTION		:
+*		The function(s) in this file run the GUI portion of an infinite bogoSort on an increasingly large array
+*/
+
 #include <stdio.h>
 #include "proto.h"
 
-//Author : Aidan Eastcott
 /*
 *	FUNCTION		: printArr
 *	DESCRIPTION		: Handles the GUI for bogoSort()
