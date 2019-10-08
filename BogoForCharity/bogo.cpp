@@ -12,6 +12,9 @@
 #include <thread>
 #include "proto.h"
 
+//Constants
+#define STARTING_VALUE 2
+
 //Globals
 int currentNumOfElements = 2;
 int timeTaken = 0;
@@ -24,7 +27,7 @@ int main() {
 	int calculatedTime = 0;
 
 	//Loop will run bogo, increase the size of the array each loop
-	for (int sizeOfArray = 2; 1 < 2; sizeOfArray++) {
+	for (int sizeOfArray = STARTING_VALUE; 1 < 2; sizeOfArray++) {
 		//Allocate memory to arr. Equal in size to sizeOfArray * 4 bytes (size of an int in c)
 		int* arr = (int*)malloc(sizeOfArray * sizeof(int));
 		//Fill allocated memory with random values
