@@ -75,33 +75,27 @@ void printArr(int arr[], int size, int a, int b, bool clearScreen) {
 				if (arr[j] > i) {
 					if (j == a || j == b) {
 						for (int x = 0; x < BAR_WIDTH; x++) {
-							//printf("%c", CHAR_SWAP_BAR);
 							str[count++] = CHAR_SWAP_BAR;
 						}
 						for (int x = 0; x < BAR_SPACE_WIDTH; x++) {
-							//printf("%c", CHAR_BLANK);
 							str[count++] = CHAR_BLANK;
 						}
 					}
 					else {
 						for (int x = 0; x < BAR_WIDTH; x++) {
-							//printf("%c", CHAR_DEFAULT_BAR);
 							str[count++] = CHAR_DEFAULT_BAR;
 						}
 						for (int x = 0; x < BAR_SPACE_WIDTH; x++) {
-							//printf("%c", CHAR_BLANK);
 							str[count++] = CHAR_BLANK;
 						}
 					}
 				}
 				else {
 					for (int x = 0; x < FULL_WIDTH; x++) {
-						//printf("%c", CHAR_BLANK);
 						str[count++] = CHAR_BLANK;
 					}
 				}
 			}
-			//printf("\n");
 			str[count++] = CHAR_NEW_LINE;
 		}
 	}
@@ -117,74 +111,57 @@ void printArr(int arr[], int size, int a, int b, bool clearScreen) {
 			for (int k = 1; k < BOTTOM_LINE_HEIGHT; k++) {
 				for (int i = 0; i < size; i++) {
 					if (i == b) {
-						//printf("%c", CHAR_VERTICAL_LINE);
 						str[count++] = CHAR_VERTICAL_LINE;
 						for (int x = 0; x < BAR_WIDTH - 1; x++) {
-							//printf("%c", CHAR_BLANK);
 							str[count++] = CHAR_BLANK;
 						}
 					}
 					else if (i == a) {
 						for (int x = 0; x < FULL_WIDTH - 1; x++) {
-							//printf("%c", CHAR_BLANK);
 							str[count++] = CHAR_BLANK;
 						}
-						//printf("%c", CHAR_VERTICAL_LINE);
 						str[count++] = CHAR_VERTICAL_LINE;
 						for (int x = 0; x < BAR_SPACE_WIDTH; x++) {
-							//printf("%c", CHAR_MID);
 							str[count++] = CHAR_BLANK;
 						}
 					}
 					else {
 						for (int x = 0; x < FULL_WIDTH; x++) {
-							//printf("%c", CHAR_BLANK);
 							str[count++] = CHAR_BLANK;
 						}
 					}
 				}
 			}
-
-			//printf("\n");
 			str[count++] = CHAR_NEW_LINE;
 		}
 
 		for (int i = 0; i < size; i++) {
 			if (i == b) {
-				//printf("%c", CHAR_LEFT);
 				str[count++] = CHAR_LEFT;
 				for (int x = 0; x < BAR_WIDTH - 1; x++) {
-					//printf("%c", CHAR_MID);
 					str[count++] = CHAR_MID;
 				}
 			}
 			else if (i == a) {
 				for (int x = 0; x < FULL_WIDTH - 1; x++) {
-					//printf("%c", CHAR_MID);
 					str[count++] = CHAR_MID;
 				}
-				//printf("%c", CHAR_RIGHT);
 				str[count++] = CHAR_RIGHT;
 				for (int x = 0; x < BAR_SPACE_WIDTH; x++) {
-					//printf("%c", CHAR_MID);
 					str[count++] = CHAR_BLANK;
 				}
 			}
 			else if (i > b&& i < a) {
 				for (int x = 0; x < FULL_WIDTH; x++) {
-					//printf("%c", CHAR_MID);
 					str[count++] = CHAR_MID;
 				}
 			}
 			else {
 				for (int x = 0; x < FULL_WIDTH; x++) {
-					//printf("%c", CHAR_BLANK);
 					str[count++] = CHAR_BLANK;
 				}
 			}
 		}
-
-		//printf("\n");
 		str[count++] = CHAR_NEW_LINE;
 	}
 	else {
@@ -197,7 +174,6 @@ void printArr(int arr[], int size, int a, int b, bool clearScreen) {
 	}
 
 	for (int i = 0; i < size; i++) {
-		//printf("%-*d", BAR_WIDTH, arr[i]);
 		int isNumber = 0;
 		for (int m = 0; m < BAR_WIDTH; m++) {
 			if (digitAt(arr[i], BAR_WIDTH - m) != 0 || isNumber) {
@@ -209,12 +185,9 @@ void printArr(int arr[], int size, int a, int b, bool clearScreen) {
 			}
 		}
 		for (int m = 0; m < BAR_SPACE_WIDTH; m++) {
-			//printf("%c", CHAR_BLANK);
 			str[count++] = CHAR_BLANK;
 		}
 	}
-
-	//printf("\n");
 	str[count++] = CHAR_NEW_LINE;
 	str[count++] = '\0';
 
