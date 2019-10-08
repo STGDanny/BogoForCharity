@@ -1,26 +1,22 @@
 /*
 *	FILE			: bogo.cpp
 *	PROJECT			: BogoForCharity
-*	PROGRAMMER		: Daniel Pieczewski
+*	PROGRAMMER(S)	: Daniel Pieczewski, Aidan Eastcott
 *	FIRST VERSION	: 2019-10-6
 *	DESCRIPTION		:
 *		The function(s) in this file run an infinite bogoSort on an increasingly large array
 */
-
 #include <stdio.h>
 #include <time.h>
 #include <chrono>
 #include <thread>
+#include "proto.h"
 
-//Function prototypes
-void fillArray(int*, int);
-void bogoSort(int[], int);
-int checkIfSorted(int[], int);
-void swap(int*, int*);
-void shuffle(int[], int);
-void printArr(int arr[], int size, int a, int b);
-void printArr(int arr[], int size);
+//Globals
+int currentNumOfElements = 2;
+int timeTaken = 0;
 
+//Author : Daniel Pieczewski
 //Driver code for bogo
 int main() {
 	//Seed random number generator using current time (very random value)
@@ -38,9 +34,6 @@ int main() {
 		//Shuffle array before sorting
 		shuffle(arr, sizeOfArray);
 
-		//Print output
-		//printArr(arr, sizeOfArray);
-
 		//Start clock and bogo
 		clock_t begin = clock();
 		bogoSort(arr, sizeOfArray);
@@ -51,10 +44,13 @@ int main() {
 
 		//Free up memory allocated to arr
 		free(arr);
+		currentNumOfElements++;
+		timeTaken = calculatedTime;
 	}
 	return 0;
 }
 
+//Author : Daniel Pieczewski
 /*
 *	FUNCTION		: fillArray
 *	DESCRIPTION		: Fills each element of an array with values from 1 to the size of arr
@@ -73,6 +69,7 @@ void fillArray(int* arr, int size) {
 	}
 }
 
+//Author : Daniel Pieczewski
 /*
 *	FUNCTION		: bogoSort
 *	DESCRIPTION		: The best / worst sorting algorithm ever conceptualized.
@@ -93,6 +90,7 @@ void bogoSort(int arr[], int size) {
 	}
 }
 
+//Author : Daniel Pieczewski
 /*
 *	FUNCTION		: checkIfSorted
 *	DESCRIPTION		: Iterates through the list to check if array is sorted
@@ -117,6 +115,7 @@ int checkIfSorted(int arr[], int size) {
 	return 1;
 }
 
+//Author : Daniel Pieczewski
 /*
 *	FUNCTION		: swap
 *	DESCRIPTION		: Swaps two array elements
@@ -128,7 +127,6 @@ int checkIfSorted(int arr[], int size) {
 *	RETURNS			:
 *	void			: Void
 */
-
 void swap(int* xp, int* yp) {
 	//Create temporary value equal to the first number
 	int tmpInt = *xp;
@@ -139,6 +137,7 @@ void swap(int* xp, int* yp) {
 	//Numbers have been swapped
 }
 
+//Author : Daniel Pieczewski
 /*
 *	FUNCTION		: shuffle
 *	DESCRIPTION		: Shuffles an array in pseudo-random fashion
@@ -157,71 +156,20 @@ void shuffle(int arr[], int size) {
 		//Swap current element with a random element in the array
 		swap(&arr[i], &arr[rand() % size]);
 	}
+
+	printf("Last sort took %d seconds\n", timeTaken);
+	//
+	//Print above this comment to print above the graph
+	//
 	printArr(arr, size);
+	//
+	//Print below this comment to print below the graph
+	//
+	printf("Currently sorting %d elements\n", currentNumOfElements);
+
+	//Optional sleep statement to slow down algorithm
 	std::this_thread::sleep_for(300ms);
+
+	//Clear screen to keep it clean
 	system("cls");
-}
-
-void printArr(int arr[], int size) {
-	printArr(arr, size, -1, -1);
-}
-
-void printArr(int arr[], int size, int a, int b) {
-	const char CHAR_DEFAULT_BAR = 219;
-	const char CHAR_SWAP_BAR = 219;
-
-	const char CHAR_LEFT1 = 192;
-	const char CHAR_LEFT2 = 196;
-	const char CHAR_RIGHT1 = 217;
-	const char CHAR_RIGHT2 = 196;
-	const char CHAR_MID = 196;
-
-	for (int i = size - 1; i >= 0; i--) {
-		for (int j = 0; j < size; j++) {
-			if (arr[j] > i) {
-				if (j == a || j == b) {
-					printf("%c%c  ", CHAR_SWAP_BAR, CHAR_SWAP_BAR);
-				}
-				else {
-					printf("%c%c  ", CHAR_DEFAULT_BAR, CHAR_DEFAULT_BAR);
-				}
-			}
-			else {
-				printf("    ");
-			}
-		}
-		printf("\n");
-	}
-
-	if (a >= 0 && b >= 0 && a != b) {
-		if (b > a) {
-			swap(&a, &b);
-		}
-
-		for (int i = 0; i < a + 1; i++) {
-			if (i == b) {
-				printf("%c%c%c%c", CHAR_LEFT1, CHAR_LEFT2, CHAR_MID, CHAR_MID);
-			}
-			else if (i == a) {
-				printf("%c%c  ", CHAR_RIGHT2, CHAR_RIGHT1);
-			}
-			else if (i > b&& i < a) {
-				printf("%c%c%c%c", CHAR_MID, CHAR_MID, CHAR_MID, CHAR_MID);
-			}
-			else {
-				printf("    ");
-			}
-		}
-
-		printf("\n");
-	}
-	else {
-		printf("\n");
-	}
-
-	for (int i = 0; i < size; i++) {
-		printf("%02d  ", arr[i]);
-	}
-
-	printf("\n");
 }
