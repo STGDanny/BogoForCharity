@@ -1,0 +1,4 @@
+﻿  bogo.cpp
+C:\Users\ste4l\Dev\BogoForCharity\BogoForCharity\bogo.cpp(34,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\ste4l\Dev\BogoForCharity\BogoForCharity\bogo.cpp(67,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  BogoForCharity.vcxproj -> C:\Users\ste4l\Dev\BogoForCharity\Debug\BogoForCharity.exe
