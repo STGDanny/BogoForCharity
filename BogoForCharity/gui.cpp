@@ -130,9 +130,9 @@ void printArr(int arr[], int size, int a, int b, bool clearScreen) {
 							str[count++] = CHAR_BLANK;
 						}
 					}
+					str[count++] = CHAR_NEW_LINE;
 				}
 			}
-			str[count++] = CHAR_NEW_LINE;
 		}
 
 		for (int i = 0; i < size; i++) {
