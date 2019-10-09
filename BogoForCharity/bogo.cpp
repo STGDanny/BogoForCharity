@@ -12,12 +12,15 @@
 #include <thread>
 #include "proto.h"
 
+using namespace std::chrono_literals;
+
 //Constants
 #define STARTING_VALUE 2
 
 //Globals
 int currentNumOfElements = 2;
 int timeTaken = 0;
+bool flag = false;
 
 //Driver code for bogo
 int main() {
@@ -88,6 +91,7 @@ void bogoSort(int arr[], int size) {
 	while (!checkIfSorted(arr, size)) {
 		shuffle(arr, size);
 	}
+	flag = true;
 }
 
 /*
@@ -147,7 +151,6 @@ void swap(int* xp, int* yp) {
 *	void			: Void
 */
 void shuffle(int arr[], int size) {
-	using namespace std::chrono_literals;
 	//For every element in arr[], starting from the last element
 	for (int i = 0; i < size; i++) {
 		//Swap current element with a random element in the array
@@ -165,7 +168,7 @@ void shuffle(int arr[], int size) {
 	printf("Currently sorting %d elements\n", currentNumOfElements);
 
 	//Optional sleep statement to slow down algorithm
-	std::this_thread::sleep_for(300ms);
+	//std::this_thread::sleep_for(100ms);
 
 	//Clear screen to keep it clean
 	system("cls");
