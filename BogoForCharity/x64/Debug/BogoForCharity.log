@@ -1,11 +1,8 @@
-﻿  bogo.cpp
-  gui.cpp
-C:\Users\Aidan\source\repos\BogoForCharity\BogoForCharity\bogo.cpp(28,12): warning C4244:  'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+﻿  gui.cpp
 C:\Users\Aidan\source\repos\BogoForCharity\BogoForCharity\gui.cpp(38,32): warning C4309:  'initializing': truncation of constant value
 C:\Users\Aidan\source\repos\BogoForCharity\BogoForCharity\gui.cpp(39,29): warning C4309:  'initializing': truncation of constant value
 C:\Users\Aidan\source\repos\BogoForCharity\BogoForCharity\gui.cpp(43,25): warning C4309:  'initializing': truncation of constant value
 C:\Users\Aidan\source\repos\BogoForCharity\BogoForCharity\gui.cpp(44,26): warning C4309:  'initializing': truncation of constant value
 C:\Users\Aidan\source\repos\BogoForCharity\BogoForCharity\gui.cpp(45,24): warning C4309:  'initializing': truncation of constant value
-  Generating Code...
 C:\Users\Aidan\source\repos\BogoForCharity\BogoForCharity\gui.cpp(46,34): warning C4309:  'initializing': truncation of constant value
-  BogoForCharity.vcxproj -> C:\Users\Aidan\Source\Repos\BogoForCharity\x64\Debug\BogoForCharity.exe
+  BogoForCharity.vcxproj -> C:\Users\Aidan\source\repos\BogoForCharity\x64\Debug\BogoForCharity.exe
