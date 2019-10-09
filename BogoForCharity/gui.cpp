@@ -191,9 +191,9 @@ void printArr(int arr[], int size, int a, int b, bool clearScreen) {
 	str[count++] = CHAR_NEW_LINE;
 	str[count++] = '\0';
 
-	//if (clearScreen) {
-	//	system("cls");
-	//}
+	if (clearScreen) {
+		system("cls");
+	}
 	printf("%s", str);
 
 	free(str);
