@@ -63,13 +63,13 @@ void printArr(int arr[], int size, int a, int b, bool clearScreen) {
 
 	int strSize = ((FULL_WIDTH * size) * (BAR_HEIGHT_MULTIPLE * maxElement))
 		+ ((FULL_WIDTH * size) * BOTTOM_LINE_HEIGHT)
-		+ (FULL_WIDTH * size)
+		+ (FULL_WIDTH * maxElement)
 		+ ((BAR_HEIGHT_MULTIPLE * size) + BOTTOM_LINE_HEIGHT + 1) + 1;
 
 	char* str = (char*)malloc(strSize * sizeof(char));
 	int count = 0;
 
-	for (int i = size - 1; i >= 0; i--) {
+	for (int i = maxElement - 1; i >= 0; i--) {
 		for (int k = 0; k < BAR_HEIGHT_MULTIPLE; k++) {
 			for (int j = 0; j < size; j++) {
 				if (arr[j] > i) {
