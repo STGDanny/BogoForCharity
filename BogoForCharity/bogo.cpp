@@ -20,7 +20,7 @@ using namespace std::chrono_literals;
 //Globals
 int currentNumOfElements = 2;
 int timeTaken = 0;
-bool flag = false;
+bool successFlag = false;
 
 //Driver code for bogo
 int main() {
@@ -30,7 +30,7 @@ int main() {
 	int calculatedTime = 0;
 
 	//Loop will run bogo, increase the size of the array each loop
-	for (int sizeOfArray = STARTING_VALUE; 1 < 2; sizeOfArray++) {
+	for (int sizeOfArray = STARTING_VALUE; true; sizeOfArray++) {
 		//Allocate memory to arr. Equal in size to sizeOfArray * 4 bytes (size of an int in c)
 		int* arr = (int*)malloc(sizeOfArray * sizeof(int));
 		//Fill allocated memory with random values
@@ -91,7 +91,6 @@ void bogoSort(int arr[], int size) {
 	while (!checkIfSorted(arr, size)) {
 		shuffle(arr, size);
 	}
-	flag = true;
 }
 
 /*
@@ -114,7 +113,8 @@ int checkIfSorted(int arr[], int size) {
 			return 0;
 		}
 	}
-	//If loop exits without returning 0, array must be sorted, return 1.
+	//If loop exits without returning 0, array must be sorted, set flag to true, return 1.
+	successFlag = true;
 	return 1;
 }
 
@@ -157,6 +157,19 @@ void shuffle(int arr[], int size) {
 		swap(&arr[i], &arr[rand() % size]);
 	}
 
+	//Check whether the success flag is true
+	if (successFlag) {
+		//If true, pause to show resulting graph, negate flag and clear the screen
+		std::this_thread::sleep_for(2500ms);
+		successFlag = false;
+		system("cls");
+	}
+	else {
+		//If false, business as usual
+		//Clear screen to keep it clean
+		system("cls");
+	}
+
 	printf("Last sort took %d seconds\n", timeTaken);
 	//
 	//Print above this comment to print above the graph
@@ -168,8 +181,5 @@ void shuffle(int arr[], int size) {
 	printf("Currently sorting %d elements\n", currentNumOfElements);
 
 	//Optional sleep statement to slow down algorithm
-	//std::this_thread::sleep_for(100ms);
-
-	//Clear screen to keep it clean
-	system("cls");
+	std::this_thread::sleep_for(100ms);
 }
