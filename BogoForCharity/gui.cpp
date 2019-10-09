@@ -48,7 +48,7 @@ void printArr(int arr[], int size, int a, int b, bool clearScreen) {
 	//	do not make these less than 1
 	const int BAR_HEIGHT_MULTIPLE = 1;
 	const int BAR_WIDTH = 2;
-	const int BAR_SPACE_WIDTH = 2;
+	const int BAR_SPACE_WIDTH = 3;
 	const int BOTTOM_LINE_HEIGHT = 2;
 
 	//	do not modify below this point
