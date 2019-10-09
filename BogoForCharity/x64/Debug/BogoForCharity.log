@@ -1,8 +1,0 @@
-﻿  gui.cpp
-C:\Users\Aidan\source\repos\BogoForCharity\BogoForCharity\gui.cpp(38,32): warning C4309:  'initializing': truncation of constant value
-C:\Users\Aidan\source\repos\BogoForCharity\BogoForCharity\gui.cpp(39,29): warning C4309:  'initializing': truncation of constant value
-C:\Users\Aidan\source\repos\BogoForCharity\BogoForCharity\gui.cpp(43,25): warning C4309:  'initializing': truncation of constant value
-C:\Users\Aidan\source\repos\BogoForCharity\BogoForCharity\gui.cpp(44,26): warning C4309:  'initializing': truncation of constant value
-C:\Users\Aidan\source\repos\BogoForCharity\BogoForCharity\gui.cpp(45,24): warning C4309:  'initializing': truncation of constant value
-C:\Users\Aidan\source\repos\BogoForCharity\BogoForCharity\gui.cpp(46,34): warning C4309:  'initializing': truncation of constant value
-  BogoForCharity.vcxproj -> C:\Users\Aidan\source\repos\BogoForCharity\x64\Debug\BogoForCharity.exe
