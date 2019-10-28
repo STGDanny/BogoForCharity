@@ -1,20 +1,13 @@
 /*
-*	FILE			: proto.h
+*	FILE			: gui.h
 *	PROJECT			: BogoForever
 *	PROGRAMMER(S)	: Daniel Pieczewski, Aidan Eastcott
 *	FIRST VERSION	: 2019-10-8
 *	DESCRIPTION		:
-*		This header is used to link all functions in the project together
+*		This header contains function prototypes for gui.cpp
 */
 
 #pragma once
-
-//Function prototypes for bogo.cpp
-void fillArray(int*, int);
-void bogoSort(int[], int);
-int checkIfSorted(int[], int);
-void swap(int*, int*);
-void shuffle(int[], int);
 
 //Function prototypes for gui.cpp
 void printArr(int[], int, int, int);

@@ -5,12 +5,14 @@
 *	FIRST VERSION	: 2019-10-6
 *	DESCRIPTION		:
 *		The function(s) in this file run an infinite bogoSort on an increasingly large array
+*		until the user stops the program
 */
 #include <stdio.h>
 #include <time.h>
 #include <chrono>
 #include <thread>
-#include "proto.h"
+#include "gui.h"
+#include "bogo.h"
 
 using namespace std::chrono_literals;
 

@@ -4,12 +4,14 @@
 *	PROGRAMMER(S)	: Daniel Pieczewski, Aidan Eastcott
 *	FIRST VERSION	: 2019-10-8
 *	DESCRIPTION		:
-*		The function(s) in this file run the GUI portion of an infinite bogoSort on an increasingly large array
+*		The function(s) in this file run the GUI portion of an infinite bogoSort
+*		on an increasingly large array, until the user stops the program
 */
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "proto.h"
+#include "bogo.h"
+#include "gui.h"
 
 /*
 *	FUNCTION		: printArr
