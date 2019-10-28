@@ -1,6 +1,6 @@
 /*
 *	FILE			: proto.h
-*	PROJECT			: BogoForCharity
+*	PROJECT			: BogoForever
 *	PROGRAMMER(S)	: Daniel Pieczewski, Aidan Eastcott
 *	FIRST VERSION	: 2019-10-8
 *	DESCRIPTION		:

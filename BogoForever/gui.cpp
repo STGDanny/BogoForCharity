@@ -1,6 +1,6 @@
 /*
 *	FILE			: gui.cpp
-*	PROJECT			: BogoForCharity
+*	PROJECT			: BogoForever
 *	PROGRAMMER(S)	: Daniel Pieczewski, Aidan Eastcott
 *	FIRST VERSION	: 2019-10-8
 *	DESCRIPTION		:
@@ -62,10 +62,10 @@ void printArr(int arr[], int size, int a, int b, bool clearScreen) {
 	}
 
 	int strSize = ((FULL_WIDTH * size) * (BAR_HEIGHT_MULTIPLE * maxElement))
-				+ ((FULL_WIDTH * size) * BOTTOM_LINE_HEIGHT)
-				+ (FULL_WIDTH * maxElement)
-				+ ((BAR_HEIGHT_MULTIPLE * size) + BOTTOM_LINE_HEIGHT + 1)
-				+ 1;
+		+ ((FULL_WIDTH * size) * BOTTOM_LINE_HEIGHT)
+		+ (FULL_WIDTH * maxElement)
+		+ ((BAR_HEIGHT_MULTIPLE * size) + BOTTOM_LINE_HEIGHT + 1)
+		+ 1;
 
 	char* str = (char*)malloc(strSize * sizeof(char));
 	int count = 0;

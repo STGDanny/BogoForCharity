@@ -1,6 +1,6 @@
 /*
 *	FILE			: bogo.cpp
-*	PROJECT			: BogoForCharity
+*	PROJECT			: BogoForever
 *	PROGRAMMER(S)	: Daniel Pieczewski, Aidan Eastcott
 *	FIRST VERSION	: 2019-10-6
 *	DESCRIPTION		:
